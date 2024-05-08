@@ -1,6 +1,3 @@
-from functools import reduce
-
-
 def simple(n):
     for i in range(2, int(n**0.5) + 1):
         if n % i == 0:
@@ -16,7 +13,9 @@ def fun(n):
             l.append(i)
 
     if len(l) >= 4:
-        pr = reduce(lambda x, y: x * y, l)
+        pr = 1
+        for i in l:
+            pr *= i
         if (pr % sum(l)) == 0:
             return n, pr // sum(l)
 
